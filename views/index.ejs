@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+
+    <form action="/" method="post">
+        <input type="text" name="question" id="question" placeholder="question:"> <br>
+        <input type="text" name="option1" id="option1" placeholder="option 1"> <br>
+        <button type="button" id="more-option">Add More Options</button>
+        <button type="submit" name="submit">Submit</button>
+    </form>
+
+    <script>
+        let cnt = 1;
+        document.getElementById("more-option").addEventListener("click", function() {
+            cnt++;
+            const options = document.createElement("input");
+            const linebreak = document.createElement("br");
+            if(cnt == 2) {
+                const linebreakk = document.createElement("br");
+                document.getElementsByTagName("form")[0].appendChild(linebreakk);
+            }
+            
+            options.setAttribute("type", "text");
+            options.setAttribute("name", "option" + cnt.toString());
+            options.setAttribute("id", "option" + cnt.toString());
+            options.setAttribute("placeholder", "option " + cnt.toString());
+
+            var refNode = document.getElementById("more-option");
+            
+            refNode.insertAdjacentElement("beforebegin", options);
+            refNode = document.getElementById("more-option");
+            refNode.insertAdjacentElement("beforebegin", linebreak);
+            
+        });
+
+    </script>
+
+</body>
+</html>

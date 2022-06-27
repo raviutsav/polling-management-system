@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <h1> <%= question %></h1>
+
+    <form method = "POST">
+
+        <% for(const key in option) { %>
+
+            <input type="checkbox" id="<%= key %>" name="<%= key %>" value="<%= key %>">
+            <label for="<%= key %>"> <%= option[key].optionStatement%></label> <br>
+    
+        <% } %>
+        
+        <button type="submit">Submit!</button>
+    </form>
+    
+</body>
+</html>
