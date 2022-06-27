@@ -200,11 +200,18 @@ app.post('/report/*', function(req, res) {
     });
 });
 
+app.get('/about', function(req, res) {
+    res.render('msg', {
+        message: "This site is made with love by Ravi Utsav, social links are at the footer"
+    })
+})
+
 app.get('*', function(req, res) {
     res.render('msg', {
         message: "404 - Page Not Found"
     });
 })
+
 
 const port = process.env.PORT || 3000;
 

@@ -2,14 +2,19 @@
 <html lang="en">
     <%- include('./partials/head.ejs') %>
 <body>
-
-    <form action="/" method="post">
-        <input type="text" name="question" id="question" placeholder="question:"> <br>
-        <input type="text" name="option1" id="option1" placeholder="option 1"> <br>
-        <button type="button" id="more-option">Add More Options</button>
-        <button type="submit" name="submit">Submit</button>
-    </form>
-
+    
+    <h1> Making polling easier and simpler </h1>
+    
+    <div class="container">
+        <form action="/" method="post">
+            <input type="text" name="question" id="question" placeholder=" question"> <br>
+            <input type="text" name="option1" id="option1" placeholder="option 1"> <br>
+            <button type="button" id="more-option">Add More Options</button>
+            <button type="submit" id="submit" name="submit">Submit</button>
+        </form>
+    </div>
+    
+    <%- include('./partials/footer.ejs') %>
     <script>
         let cnt = 1;
         document.getElementById("more-option").addEventListener("click", function() {
@@ -35,6 +40,6 @@
         });
 
     </script>
-
+    
 </body>
 </html>

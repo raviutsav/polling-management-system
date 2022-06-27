@@ -2,18 +2,23 @@
 <html lang="en">
     <%- include('./partials/head.ejs') %>
 <body>
-    <h1> <%= question %></h1>
 
-    <ol>
-        <% for(const key in option) { %>
+    <div class="container">
+        <h2> <%= question %></h2>
 
-            <li><%= option[key].optionStatement %>  has got <%= option[key].count %> votes.</li>
-            
-        <% } %>     
-    </ol>
+        <ol>
+            <% for(const key in option) { %>
 
-    <form method="POST">
+                <li><%= option[key].optionStatement %>  has got <%= option[key].count %> votes.</li>
+                
+            <% } %>     
+        </ol>
+
+        <form method="POST">
         <button type="submit"> Delete this poll </button>
     </form>
+    </div>
+    
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>
