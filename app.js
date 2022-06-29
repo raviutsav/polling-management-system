@@ -170,8 +170,19 @@ app.get('/report/*', function(req, res) {
                 option = JSON.parse(docs[0].options);
                 question = docs[0].questionStatement;
                 // console.log(option);
+
+                let optionStat = [];
+                let voteCount = [];
+
+                for(const key in option) {
+
+                    // <li><%= option[key].optionStatement %>  has got <%= option[key].count %> votes.</li>
+                    optionStat.push(option[key].optionStatement);
+                    voteCount.push(option[key].count);
+                }
                 res.render('report', {
-                    option: option,
+                    optionStat: optionStat,
+                    voteCount: voteCount,
                     question: question
                 });
             } else {
