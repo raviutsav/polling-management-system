@@ -5,13 +5,13 @@
 
     <div class="container">
         <h2> <%= question %></h2>
-        <ol>
+        <ul>
             <% for(const key in option) { %>
 
                 <li><%= option[key].optionStatement %>  has got <%= option[key].count %> votes.</li>
                 
             <% } %>     
-        </ol>
+        </ul>
         <button onClick="window.location.reload();">Refresh Page</button>
         <form method="POST">
         <button type="submit"> Delete this poll </button>
